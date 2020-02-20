@@ -1,22 +1,26 @@
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Bins {
 
-    Bins result = new Bins(2,12);
+    private Dice dice;
+    ArrayList<Integer> num;
 
-    public Bins(int numOfDice, int maxNumOfOneDice) {
+
+    public Bins(int numOfDice, int maxValue) {
+        this.dice = new Dice(numOfDice,6);
+        this.num = new ArrayList<>(maxValue - numOfDice + 1);
+        for (Integer i : num) {
+            i = 0;
+        }
     }
 
-
-
-    private void incrementBin() { }
-
-    private Integer getBin(int numberOfRolls) {
+    private Integer getBin(int rollsValue) {
         return null;
     }
 
-    Integer numberOfTens = result.getBin(10);
+    private void incrementBin() { }
 
 
 
-    // result.incrementBin(10);
 }
