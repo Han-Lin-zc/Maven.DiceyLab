@@ -10,6 +10,13 @@ public class Bins {
 
     private void incrementBin() { }
 
-    // Integer numberOfTens = result.getBin(10);
+    private Integer getBin(int numberOfRolls) {
+        return null;
+    }
+
+    Integer numberOfTens = result.getBin(10);
+
+
+
     // result.incrementBin(10);
 }

@@ -8,12 +8,6 @@ public class Dice {
     private int numberOfDice;
     private int numberOfFaceOnDice;
 
-    Dice crapsDice = new Dice(2, 6);
-    Dice yatzeeDice = new Dice(5,6);
-
-
-    Integer toss = crapsDice.tossAndSum();
-
 
     public Dice(int numberOfDice, int numberOfFaceOnDice) {
         this.numberOfDice = numberOfDice;
@@ -22,17 +16,7 @@ public class Dice {
 
 
     public int tossAndSum() {
-        long seed = 25L;
-        Random random = new Random(seed);
-        int sum = random.nextInt(numberOfDice * numberOfFaceOnDice);
-        LOGGER.info("" + random.nextInt());
-        return sum;
+        Random random = new Random();
+        return random.nextInt(numberOfDice * numberOfFaceOnDice) + 1;
     }
-
-
 }
-
-
-
-//for DiceyLab tests, use Random setSeed(x) when you set the seed,
-// you always get the same series of “random” numbers
