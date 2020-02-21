@@ -23,7 +23,7 @@ public class Simulation {
         System.out.println("Simulation of 2 dice tossed for 100000 times.");
         System.out.println();
 
-        for (int i = numberOfDice; i <= numberOfDice * 6 + 1; i++)
+        for (int i = numberOfDice; i <= numberOfDice * 6 + 1; i++);
 
           //  String s = String.format("" ,i, );
 
