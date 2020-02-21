@@ -8,19 +8,22 @@ public class Bins {
 
 
     public Bins(int numOfDice, int maxValue) {
+
         this.dice = new Dice(numOfDice,6);
         this.num = new ArrayList<>(maxValue - numOfDice + 1);
-        for (Integer i : num) {
-            i = 0;
+
+        for (int i = 0; i < maxValue - numOfDice + 1; i++) {
+            num.add(0);
         }
     }
 
-    private Integer getBin(int rollsValue) {
-        return null;
+    public Integer getBin(int rollsValue) {
+
+        return num.get(rollsValue - dice.numberOfDice);
     }
 
-    private void incrementBin() { }
+    public void incrementBin(int rollsValue) {
 
-
-
+        num.set(rollsValue - dice.numberOfDice, num.get(rollsValue - dice.numberOfDice)+1);
+    }
 }

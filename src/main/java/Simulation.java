@@ -1,23 +1,33 @@
 public class Simulation {
 
-    Simulation sim = new Simulation(2, 10000);
-    // sim.runSimulation();
-    // sim.printResult();
+    private Dice dice;
+    private int numberOfTosses;
+    private Bins bins;
+    private int numberOfDice;
 
-        // Integer toss = CrapsDice.tossAndSum;
-
-
-
-
-    public Simulation (int numberOfDies, int numberOfTosses) {
+    public Simulation (int numberOfDice, int numberOfTosses) {
+        this.dice = new Dice(2,6);
+        this.numberOfTosses = numberOfTosses;
+        this.bins = new Bins(numberOfDice,numberOfDice * 6);
+        this.numberOfDice = numberOfDice;
     }
 
+    public void runSimulation() {
 
-
-    private void runSimulation() {
+        for (int i = 0; i < numberOfTosses; i++) {
+            bins.incrementBin(dice.tossAndSum());
+        }
     }
 
-    private void printResult() {
+    public void printResult() {
+        System.out.println("Simulation of 2 dice tossed for 100000 times.");
+        System.out.println();
+
+        for (int i = numberOfDice; i <= numberOfDice * 6 + 1; i++) {
+            String.format(i + " : " + bins.getBin(i-numberOfDice) + " : " +
+                    (bins.getBin(i - numberOfDice) / numberOfTosses));
+        }
+
     }
 
 }

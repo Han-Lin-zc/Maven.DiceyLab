@@ -1,11 +1,8 @@
 import java.util.Random;
-import java.util.logging.Logger;
 
 public class Dice {
 
-    private static final Logger LOGGER = Logger.getLogger(Dice.class.getName());
-
-    private int numberOfDice;
+    public int numberOfDice;
     private int numberOfFaceOnDice;
 
 
