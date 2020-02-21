@@ -28,7 +28,7 @@ public class Simulation {
 
             double odds = numberOfRolls / numberOfTosses;
 
-            int starsCount = (int) odds * 100;
+            int starsCount = (int) (odds * 100);
 
             String s = String.format(" %2.2s : %7.0f : %2.2f %s" , i , numberOfRolls, odds, getRowOfStars(starsCount));
             System.out.println(s);
