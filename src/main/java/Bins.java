@@ -10,7 +10,7 @@ public class Bins {
     public Bins(int numOfDice, int maxValue) {
 
         this.dice = new Dice(numOfDice,6);
-        this.num = new ArrayList<>(maxValue - numOfDice + 1);
+        this.num = new ArrayList<>();
 
         for (int i = 0; i < maxValue - numOfDice + 1; i++) {
             num.add(0);
@@ -24,6 +24,6 @@ public class Bins {
 
     public void incrementBin(int rollsValue) {
 
-        num.set(rollsValue - dice.numberOfDice, num.get(rollsValue - dice.numberOfDice)+1);
+        num.set(rollsValue - dice.numberOfDice, num.get(rollsValue - dice.numberOfDice) + 1);
     }
 }

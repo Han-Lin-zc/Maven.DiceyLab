@@ -6,7 +6,7 @@ public class Simulation {
     private int numberOfDice;
 
     public Simulation (int numberOfDice, int numberOfTosses) {
-        this.dice = new Dice(2,6);
+        this.dice = new Dice(numberOfDice,6);
         this.numberOfTosses = numberOfTosses;
         this.bins = new Bins(numberOfDice,numberOfDice * 6);
         this.numberOfDice = numberOfDice;
@@ -24,7 +24,7 @@ public class Simulation {
         System.out.println();
 
         for (int i = numberOfDice; i <= numberOfDice * 6 + 1; i++) {
-            String.format(i + " : " + bins.getBin(i-numberOfDice) + " : " +
+            System.out.println(i + " : " + bins.getBin(i-numberOfDice) + " : " +
                     (bins.getBin(i - numberOfDice) / numberOfTosses));
         }
 
