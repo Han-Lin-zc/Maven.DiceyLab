@@ -23,11 +23,12 @@ public class Simulation {
         System.out.println("Simulation of 2 dice tossed for 100000 times.");
         System.out.println();
 
-        for (int i = numberOfDice; i <= numberOfDice * 6 + 1; i++) {
-            System.out.println(i + " : " + bins.getBin(i-numberOfDice) + " : " +
-                    (bins.getBin(i - numberOfDice) / numberOfTosses));
-        }
+        for (int i = numberOfDice; i <= numberOfDice * 6 + 1; i++)
 
+          //  String s = String.format("" ,i, );
+
+
+        //return s;
     }
 
 }
