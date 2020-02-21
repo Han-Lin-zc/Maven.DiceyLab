@@ -11,6 +11,6 @@ public class DiceTest {
     @Test
     public void tossAndSum() {
         Dice dice = new Dice(2, 6);
-        Assert.assertTrue(dice.tossAndSum(100000) >= 2 && dice.tossAndSum(100000) <= 12);
+        Assert.assertTrue(dice.tossAndSum() >= 2 && dice.tossAndSum() <= 12);
         }
     }

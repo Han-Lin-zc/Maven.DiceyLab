@@ -13,7 +13,9 @@ public class Simulation {
     }
 
     public void runSimulation() {
-        bins.incrementBin(dice.tossAndSum(numberOfTosses));
+        for (int i = 0; i < numberOfTosses; i++) {
+            bins.incrementBin(dice.tossAndSum());
+        }
     }
 
     public void printResult() {
@@ -22,11 +24,11 @@ public class Simulation {
 
         for (int i = numberOfDice; i < numberOfDice * 6 + 1; i++) {
 
-            int numberOfRolls = bins.getBin(i - numberOfDice);
+            int numberOfRolls = bins.getBin(i);
 
-            int odds = bins.getBin(i - numberOfDice) / numberOfTosses;
-
-            String s = String.format(" %2.2s : %7.8s : %2.3s %2.10s" , i , numberOfRolls, odds, getRowOfStars(odds));
+            double odds = (double) (bins.getBin(i) / numberOfTosses);
+            int stars = (int) odds * 100;
+            String s = String.format(" %2.2s : %7.8s : %2.4s %2.10s" , i , numberOfRolls, odds, getRowOfStars(stars));
 
             System.out.println(s);
 

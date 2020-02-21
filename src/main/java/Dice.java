@@ -20,7 +20,7 @@ public class Dice {
         this.random = new Random();
     }
 
-    public int tossAndSum(int numberOfTosses) {
+    public int tossAndSum() {
         int sum = 0;
         for (int i = 0; i < numberOfDice; i++) {
             sum += random.nextInt(sizes) + 1;
