@@ -13,10 +13,7 @@ public class Simulation {
     }
 
     public void runSimulation() {
-
-        for (int i = 0; i < numberOfTosses; i++) {
-            bins.incrementBin(dice.tossAndSum());
-        }
+        bins.incrementBin(dice.tossAndSum(numberOfTosses));
     }
 
     public void printResult() {
@@ -26,16 +23,17 @@ public class Simulation {
         for (int i = numberOfDice; i < numberOfDice * 6 + 1; i++) {
 
             int numberOfRolls = bins.getBin(i - numberOfDice);
+
             int odds = bins.getBin(i - numberOfDice) / numberOfTosses;
 
-            String s = String.format(" %2.2s : %7.8s : %2.3s %2.10s" , i , numberOfRolls, odds, getRow(odds));
+            String s = String.format(" %2.2s : %7.8s : %2.3s %2.10s" , i , numberOfRolls, odds, getRowOfStars(odds));
 
             System.out.println(s);
 
         }
     }
 
-    public static String getRow (int numberOfStars) {
+    public static String getRowOfStars(int numberOfStars) {
         String expected = "";
         for (int i = 0; i < numberOfStars; i++) {
             expected += "*";

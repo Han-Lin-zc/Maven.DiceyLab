@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Dice {
 
@@ -19,9 +20,11 @@ public class Dice {
         this.random = new Random();
     }
 
-    public int tossAndSum() {
-
-        return random.nextInt(numberOfDice * sizes);
-
+    public int tossAndSum(int numberOfTosses) {
+        int sum = 0;
+        for (int i = 0; i < numberOfDice; i++) {
+            sum += random.nextInt(sizes) + 1;
+        }
+        return sum;
     }
 }
