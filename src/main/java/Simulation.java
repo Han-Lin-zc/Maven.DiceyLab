@@ -24,13 +24,13 @@ public class Simulation {
 
         for (int i = numberOfDice; i < numberOfDice * 6 + 1; i++) {
 
-            int numberOfRolls = bins.getBin(i);
+            double numberOfRolls = bins.getBin(i);
 
             double odds = numberOfRolls / numberOfTosses;
 
             int stars = (int) odds * 100;
 
-            String s = String.format(" %2.2s : %7.8s : %2.2f %2.10s" , i , numberOfRolls, odds, getRowOfStars(stars));
+            String s = String.format(" %2.2s : %7.0f : %2.2f %s" , i , numberOfRolls, odds, getRowOfStars(stars));
             System.out.println(s);
 
         }
