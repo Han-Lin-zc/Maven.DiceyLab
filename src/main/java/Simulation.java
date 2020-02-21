@@ -26,10 +26,11 @@ public class Simulation {
 
             int numberOfRolls = bins.getBin(i);
 
-            double odds = (double) (bins.getBin(i) / numberOfTosses);
-            int stars = (int) odds * 100;
-            String s = String.format(" %2.2s : %7.8s : %2.4s %2.10s" , i , numberOfRolls, odds, getRowOfStars(stars));
+            double odds = numberOfRolls / numberOfTosses;
 
+            int stars = (int) odds * 100;
+
+            String s = String.format(" %2.2s : %7.8s : %2.2f %2.10s" , i , numberOfRolls, odds, getRowOfStars(stars));
             System.out.println(s);
 
         }
