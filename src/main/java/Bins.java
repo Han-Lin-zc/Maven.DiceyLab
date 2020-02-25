@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,4 +29,5 @@ public class Bins {
         }
         return myMap.get(roll);
     }
+
 }

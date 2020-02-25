@@ -14,5 +14,8 @@ public class BinsTest {
 
     @Test
     public void getBin() {
+        Bins bin = new Bins(2,12);
+        Assert.assertEquals(bin.myMap.get(0),bin.getBin(2));
+
     }
 }
