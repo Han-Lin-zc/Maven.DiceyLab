@@ -6,11 +6,6 @@ public class Dice {
     private int sizes;
 
 
-    public Dice(int numberOfDice, int sizes, long random) {
-        this.numberOfDice = numberOfDice;
-        this.sizes = sizes;
-    }
-
     public Dice(int numberOfDice, int sizes) {
         this.numberOfDice = numberOfDice;
         this.sizes = sizes;
